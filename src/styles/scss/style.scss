@@ -1,0 +1,20 @@
+@import './variables';
+@import './pages/pages';
+@import './components/components';
+
+::-webkit-scrollbar{
+    width: 10px;
+    height: 8px;
+    }
+    ::-webkit-scrollbar-thumb{
+    background: #C2C2C2;
+    border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+    background: #B1B2B5;
+    }
+    ::-webkit-scrollbar-track{
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: inset 7px 10px 12px 0px #F0F0F0;
+    }

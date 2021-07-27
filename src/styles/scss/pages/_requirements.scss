@@ -1,0 +1,31 @@
+.requirements {
+    @include pageContent();
+
+    h1 {
+        font-weight: 300;
+        font-size: 48px;
+    }
+
+    .rqLogo {
+        max-width: 200px;
+    }
+
+    .rqComponent {
+        padding: 18px;
+        background-color: #eff4f7;
+        border-radius: 15px;
+        transition: all 250ms ease;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 14px;
+
+        img {
+            width: 24px;
+        }
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}

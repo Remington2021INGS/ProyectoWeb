@@ -1,0 +1,46 @@
+.home {
+    .section-1 {
+        background-color: #EEF2FD;
+
+        .container {
+            height: 480px;
+            display: flex;
+            align-items: center;
+
+            h1 {
+                font-weight: 300;
+                font-size: 48px;
+            }
+
+            img {
+                max-height: 300px;
+                object-fit: contain;
+            }
+
+            .link {
+                background-color: $nav-color;
+                border-radius: 50px;
+                padding: 0 18px;
+                position: relative;
+                text-decoration: none;
+                color: white;
+                @include brandLink();
+            }
+        }
+    }
+
+    .section-2 {
+        background-color: #FAFCFF;
+
+        .container {
+            height: 480px;
+            display: flex;
+            align-items: center;
+
+            h1 {
+                font-weight: 300;
+                font-size: 48px;
+            }
+        }
+    }
+}

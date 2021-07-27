@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+$primary: 'red';
+$nav-color: rgb(45,45,45);
+$nav-accent: #E6E922;
+$nav-height: 75px;
+
+
+@mixin brandLink {
+    &::before {
+        content: '';
+        position: absolute;
+        height: 4px;
+        width: 0%;
+        background: $nav-accent;
+        transition: all 250ms ease;
+        bottom: -8px;
+        opacity: 0;
+        left: 0;
+    }
+
+    &:hover {
+        &::before {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+@mixin pageContent {
+    min-height: calc(100vh - #{$nav-height});    
+    background-color: #FAFCFF;
+    padding-top: 60px;
+
+    h1 {
+        margin-top: 0px;
+    }
+}
