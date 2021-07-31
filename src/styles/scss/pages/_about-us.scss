@@ -1,6 +1,31 @@
 .about-us {
     @include pageContent();
 
+    .about-us-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-weight: 300;
+        font-size: 32px;
+    }
+
+    .leyend {
+        font-style: italic;
+        background-color: rgb(175, 175, 175);
+        border-radius: 8px;
+        padding: 24px;
+        color: $nav-accent;
+    }
+
+    .types {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        margin: 24px 0;
+    }
+
     .members-container{
         display: flex;
         
@@ -25,5 +50,49 @@
         .member-rol {
             
         }
+    }
+
+    .bg-1 {
+        background-color: black !important;
+        color: white
+    }
+
+    .bg-2 {
+        background-color: #b8ab00 !important;
+    }
+
+    .type-card {
+        border-radius: 15px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        // height: 200px;
+        flex: 1;
+        transition: all 250ms ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        .title {
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        .content {
+
+        }
+    }
+
+    .info {
+        align-self: center;
+    }
+
+    .holdCard {
+        margin: 40px 0px;
+        max-width: 200px;
     }
 }

@@ -40,7 +40,8 @@ export const adminRoutes = {
         component: Login
     },
     users: {
-        route: '/admin/users'
+        route: '/admin/users',        
+        component: Login
     },
 
 }

@@ -1,3 +1,27 @@
 .contact {
     @include pageContent();
+
+    h1 {
+        font-weight: 300;
+        font-size: 48px;
+    }
+
+    .input {
+        background-color: white;
+
+        p {
+            background-color: #FAFCFF;
+            margin: 0;
+            color: red !important;
+        }
+    }
+
+    .actions {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        align-items: center;
+        height: 100%;
+        margin: 24px 0;
+    }
 }

@@ -168,7 +168,6 @@ const Request = () => {
                             value={userRequest.address}
                             helperText={validate && userRequest.address.length === 0 ? 'El campo es obligatorio' : ''}
                         />
-
                     </Grid>
                 </Grid>
                 <div className='actions'>

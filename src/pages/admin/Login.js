@@ -2,17 +2,32 @@ import { useState } from 'react'
 import { Grid, Hidden, TextField, Button, Box, InputAdornment, IconButton } from '@material-ui/core'
 import { AccountCircle, LockRounded, Visibility, VisibilityOff } from '@material-ui/icons';
 import { useHistory } from 'react-router-dom';
-import Logo from '../../assets/img/ecardcoins-logo.png'
+import Logo from '../../assets/img/ecardcoins-logo.png';
+import firebase from '../../configs/firebase';
+import useNotify from '../../hooks/useNotify';
+import Loader from '../../components/Loader';
 
 const Login = () => {
     const history = useHistory();
+    const {
+        showMessage
+    } = useNotify();
 
     const [credentials, setCredentials] = useState({ username: '', password: '' });
     const [showPassword, setShowPassword] = useState(false);
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleSubmit = () => {
-        // showMessage('Prueba', 'success');
-        history.push('/');
+        setIsLoading(true);
+        firebase.auth().signInWithEmailAndPassword(credentials.username, credentials.password)
+            .then((creds) => {
+                setIsLoading(false);
+                history.push('/admin/');
+            })
+            .catch((err) => {
+                setIsLoading(false);
+                showMessage(err.message, 'error');
+            });
     };
 
     return (
@@ -84,13 +99,14 @@ const Login = () => {
                     <Button
                         variant='outlined'
                         color='primary'
-                        
+
                         fullWidth
                         onClick={() => history.goBack()}
                     >Volver
                     </Button>
                 </Box>
             </Grid>
+            <Loader isVisible={isLoading} />
         </Grid>
     )
 }
