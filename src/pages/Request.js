@@ -9,6 +9,9 @@ import {
 } from '@material-ui/lab';
 import React, { useState } from 'react';
 import Loader from '../components/Loader';
+import firebase from '../configs/firebase';
+import useNotify from '../hooks/useNotify';
+const requestDb = firebase.firestore().collection('requests');
 
 const Request = () => {
 
@@ -24,6 +27,10 @@ const Request = () => {
         address: '',
     }
 
+    const {
+        showMessage
+    } = useNotify();
+
     const [isLoading, setIsLoading] = useState(false);
     const [userRequest, setUserRequest] = useState(requestObject);
     const [validate, setValidate] = useState(false);
@@ -32,7 +39,12 @@ const Request = () => {
         if (validInfo()) {
             setValidate(false);
             setIsLoading(true);
-            handleClean();
+            requestDb.add({ ...userRequest, created: new Date(Date.now()) })
+                .then(() => {
+                    handleClean();
+                    setIsLoading(false)
+                    showMessage('Solicitud enviada con exito', 'success');
+                })
         } else {
             setValidate(true);
         }

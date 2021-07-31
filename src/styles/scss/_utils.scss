@@ -1,0 +1,184 @@
+@mixin transition($x...) {
+	transition: $x;
+	-webkit-transition: $x;
+	-moz-transition: $x;
+	-ms-transition: $x;
+	-o-transition: $x;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin no-margin-padding {
+    padding: 0;
+    margin: 0;
+}
+
+.hidden {
+	visibility: hidden !important;
+}
+
+.visible {
+	visibility: visible !important;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.d-block {
+	display: block;
+}
+
+.d-none {
+	display: none;
+}
+
+.full-width {
+	max-width: none !important;
+	width: 100% !important;
+}
+
+.full-height {
+	max-height: none !important;
+	height: 100% !important;
+}
+
+@mixin breakpoint-up($breakpoint) {
+	@media (min-width: $breakpoint) {
+	@content;
+	}
+}
+
+@mixin breakpoint-down($breakpoint) {
+	@media (max-width: $breakpoint) {
+	@content;
+	}
+}
+
+.text-align-center {
+	text-align: center;	
+}
+
+.text-align-right {
+	text-align: right;
+}
+
+.text-align-left {
+	text-align: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: right;
+}
+
+.hide {
+	display: none !important;
+}
+
+.align-self-center {
+	align-self: center;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.focus-row {
+	&:hover {
+	background-color: rgba(0, 0, 0, 0.02);
+	border-color: rgba(0, 0, 0, 0.02);
+	}
+}
+
+$step-value: 8px;
+
+@for $i from 0 to 20 {
+	.ml-#{$i} {
+		margin-left: calc(#{$i} * #{$step-value}) !important;
+	}
+
+	.mr-#{$i} {
+	margin-right: calc(#{$i} * #{$step-value}) !important;
+	}
+
+	.mt-#{$i} {
+		margin-top: calc(#{$i} * #{$step-value}) !important;
+	}
+
+	.mb-#{$i} {
+		margin-bottom: calc(#{$i} * #{$step-value}) !important;
+	}
+
+	.m-#{$i} {
+		margin: calc(#{$i} * #{$step-value}) !important;
+	}
+
+	.mh-#{$i} {
+		margin-left: calc(#{$i} * #{$step-value}) !important;
+		margin-right: calc(#{$i} * #{$step-value}) !important;
+	}
+
+	.mv-#{$i} {
+		margin-top: calc(#{$i} * #{$step-value}) !important;
+		margin-bottom: calc(#{$i} * #{$step-value}) !important;
+	}
+}
+
+@for $i from 0 to 20 {
+	.pl-#{$i} {
+		padding-left: calc(#{$i} * #{$step-value}) !important;
+	}
+
+	.pr-#{$i} {
+		padding-right: calc(#{$i} * #{$step-value}) !important;
+	}
+
+	.pt-#{$i} {
+		padding-top: calc(#{$i} * #{$step-value}) !important;
+	}
+
+	.pb-#{$i} {
+		padding-bottom: calc(#{$i} * #{$step-value}) !important;
+	}
+
+	.p-#{$i} {
+		padding: calc(#{$i} * #{$step-value}) !important;
+	}
+
+	.ph-#{$i} {
+		padding-left: calc(#{$i} * #{$step-value}) !important;
+		padding-right: calc(#{$i} * #{$step-value}) !important;
+	}
+
+	.pv-#{$i} {
+		padding-top: calc(#{$i} * #{$step-value}) !important;
+		padding-bottom: calc(#{$i} * #{$step-value}) !important;
+	}
+}
+
+$default-size: 50px;
+
+@for $i from 1 to 5 {
+	.size-#{$i} {
+	height: calc(#{$i} * #{$default-size}) !important;
+	width: calc(#{$i} * #{$default-size}) !important;
+	}
+}
+
+@for $i from 1 to 10 {
+	.opacity-#{$i} {
+	opacity: calc((#{$i} * 1) / 10) !important;
+	}
+}

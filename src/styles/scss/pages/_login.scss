@@ -1,0 +1,25 @@
+.login-page {
+    height: 100vh;
+
+    .image-container {
+        @include flex-center;
+
+        background-color: $nav-color;
+
+        img {
+            width: 300px;
+            // border-radius: 150px;   
+        }
+    }
+
+    .form-login-container {
+        @include flex-center;
+        flex-direction: column;
+
+        .form-login {
+            @include flex-center;
+            flex-direction: column;
+            width: 350px;
+        }
+    }
+}

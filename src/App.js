@@ -10,7 +10,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path={adminRoutes.login.route} component={routes[0].component} />
+                <Route exact path={adminRoutes.login.route} component={adminRoutes.login.component} />
                 <Layout>
                     <Switch>
                         {
@@ -18,6 +18,7 @@ const App = () => {
                         }
                     </Switch>
                 </Layout>
+
             </Switch>
         </BrowserRouter>
     );

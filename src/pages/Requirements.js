@@ -21,12 +21,12 @@ const Requirements = () => {
                     </Grid>
                     <Grid item md={8} sm={12} xs={12}>
                         <h1>Requisitos</h1>
-                        {                            rqs.map((item, i) => (
-                                <div className='rqComponent' key={i}>
-                                    <img alt='Requirements' src={arrow} />
-                                    {item}
-                                </div>
-                            ))
+                        {rqs.map((item, i) => (
+                            <div className='rqComponent' key={i}>
+                                <img alt='Requirements' src={arrow} />
+                                {item}
+                            </div>
+                        ))
                         }
                     </Grid>
                 </Grid>

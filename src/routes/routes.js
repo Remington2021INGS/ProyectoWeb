@@ -3,6 +3,7 @@ import Requirements from './../pages/Requirements';
 import Request from './../pages/Request';
 import AboutUs from './../pages/AboutUs';
 import Contact from './../pages/Contact';
+import Login from './../pages/admin/Login';
 
 const routes = [
     {
@@ -36,7 +37,7 @@ const routes = [
 export const adminRoutes = {
     login: {
         route: '/admin/login',
-        component: ''
+        component: Login
     },
     users: {
         route: '/admin/users'
