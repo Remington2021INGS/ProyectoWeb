@@ -4,6 +4,8 @@ import Request from './../pages/Request';
 import AboutUs from './../pages/AboutUs';
 import Contact from './../pages/Contact';
 import Login from './../pages/admin/Login';
+import Dashboard from "../pages/admin/Dashboard";
+import Users from "../pages/admin/Users";
 
 const routes = [
     {
@@ -39,9 +41,13 @@ export const adminRoutes = {
         route: '/admin/login',
         component: Login
     },
+    dashboard: {
+        route: '/admin',        
+        component: Dashboard
+    },
     users: {
         route: '/admin/users',        
-        component: Login
+        component: Users
     },
 
 }

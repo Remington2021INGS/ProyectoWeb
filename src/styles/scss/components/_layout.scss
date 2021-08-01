@@ -76,3 +76,40 @@
         }
     }
 }
+
+.admin-layout {
+    display: flex;    
+    min-height: 100vh;
+
+    .appbar {
+        display: flex;
+        justify-content: center;
+        height: 70px;
+        background-color: $nav-color;
+
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .title {
+            color: $nav-accent;
+        }
+    }
+
+    .drawer {
+        background-color: $nav-color;
+        width: 250px;
+        color: white;
+        flex-shrink: 0;
+        white-space: nowrap;
+        z-index: 10;
+        margin-top: 70px;
+        padding-top: 30px;
+    }
+
+    .content {
+        flex-grow: 1;
+        padding-top: 100px;        
+    }
+}

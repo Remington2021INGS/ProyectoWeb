@@ -22,7 +22,7 @@ const Login = () => {
         firebase.auth().signInWithEmailAndPassword(credentials.username, credentials.password)
             .then((creds) => {
                 setIsLoading(false);
-                history.push('/admin/');
+                history.push('/admin');
             })
             .catch((err) => {
                 setIsLoading(false);

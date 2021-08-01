@@ -1,0 +1,17 @@
+.data-table {
+    background-color: #f7f7f7 !important;
+
+    .customRow {
+        &:hover {
+            background-color: rgb(232, 244, 255);
+        }
+    }
+
+    .edit {
+        color: blue !important
+    }
+
+    .delete {
+        color: red !important
+    }
+}

@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import PrivateRoute from './routes/PrivateRoute';
-import AdminLayout from './components/layout/AdminLayout';
 import NotFound from './pages/NotFound';
 
 const App = () => {
@@ -14,6 +13,8 @@ const App = () => {
         <BrowserRouter>
             <Switch>
                 <Route exact path={adminRoutes.login.route} component={adminRoutes.login.component} />
+                <PrivateRoute exact path={adminRoutes.dashboard.route} component={adminRoutes.dashboard.component} />
+                <PrivateRoute exact path={adminRoutes.users.route} component={adminRoutes.users.component} />
                 <Layout>
                     <Switch>
                         {
@@ -22,9 +23,6 @@ const App = () => {
                         <Route component={NotFound} />
                     </Switch>
                 </Layout>
-                <AdminLayout>
-                    <PrivateRoute exact path={adminRoutes.users.route} component={adminRoutes.users.component} />
-                </AdminLayout>                
             </Switch>
         </BrowserRouter>
     );
